@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) {
 
         // set up the creatures
-        Creature a = new Creature();
-        Creature b = new Creature();
+        DeathTouch a = new DeathTouch();
+        PlainsWalker b = new PlainsWalker();
         a.name = "A";
         a.health = 100;
         b.name = "B";
