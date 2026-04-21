@@ -3,16 +3,35 @@ public class Main {
 
         // set up the creatures
         DeathTouch a = new DeathTouch();
-        PlainsWalker b = new PlainsWalker();
-        a.name = "A";
-        a.health = 100;
-        b.name = "B";
-        b.health = 100;
+        Planeswalker b = new Planeswalker();
+        HexProof c = new HexProof();
 
         // set up the battle
         BattleSystem battleSystem = new BattleSystem();
 
-        // run the battle
-        battleSystem.battle(a, b);
+        // Randomly pick players and run battle
+        switch (Rand.randomInt(1, 3)) {
+            case 1:
+                a.name = Input.getUserString("Enter player name: ");
+                a.health = 100;
+                b.name = Input.getUserString("Enter player name: ");
+                b.health = 100;
+                battleSystem.battle(a, b);
+                break;
+            case 2:
+                a.name = Input.getUserString("Enter player name: ");
+                a.health = 100;
+                c.name = Input.getUserString("Enter player name: ");
+                c.health = 100;
+                battleSystem.battle(a, c);
+                break;
+            case 3:
+                b.name = Input.getUserString("Enter player name: ");
+                b.health = 100;
+                c.name = Input.getUserString("Enter player name: ");
+                c.health = 100;
+                battleSystem.battle(b, c);
+                break;
+        }
     }
 }
