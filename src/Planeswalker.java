@@ -1,4 +1,4 @@
-public class PlainsWalker extends Creature {
+public class Planeswalker extends Creature {
 
     @Override
     public void defend(float incomingPower) {
