@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class BattleSystem {
     public void battle(Creature a, Creature b) {
         while (a.health > 0 && b.health > 0) {
@@ -16,6 +14,13 @@ public class BattleSystem {
             Creature temp = a;
             a = b;
             b = temp;
+        }
+
+        if (a.health > 0) {
+            System.out.println("Congratulations " + a.name + ", You Won!!!");
+        }
+        else {
+            System.out.println("Congratulations " + b.name + ", You Won!!!");
         }
     }
 }
