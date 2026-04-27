@@ -1,8 +1,29 @@
 public class Creature {
-    public float health;
-    public String name;
-    public String action;
+    private float health;
+    // IntelliJ says it should be set to final, which I believe just makes it uneditable afters it's been set.
+    private final String name;
+    private String action;
 
+    public Creature(String name, float health) {
+        this.name = name;
+        this.health = health;
+    }
+
+    public float getHealth() {
+        return health;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setHealth(float health) {
+        this.health = health;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
 
     // Returns the damage done by the Creature
     public float attack() {

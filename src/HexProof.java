@@ -1,5 +1,9 @@
 public class HexProof extends Creature {
 
+    public HexProof(String name, float health) {
+        super(name, health);
+    }
+
     // HexProof has upgraded creature abilities
 
     // Returns the damage done by the Creature
@@ -8,13 +12,13 @@ public class HexProof extends Creature {
 
         // 10% chance of missing
         if (Rand.randomInt(0, 10) < 1) {
-            action = name + " missed!";
+            setAction(getName() + " missed!");
             return 0;
         }
 
         // otherwise, do damage between 15-40
         float power = Rand.randomFloat(15, 40);
-        action = name + " attacked with power " + power + "!";
+        setAction(getName() + " attacked with power " + power + "!");
         return power;
     }
 
@@ -24,13 +28,13 @@ public class HexProof extends Creature {
         // 40 % chance of reducing damage taken
         if (Rand.randomInt(0, 10) < 4) {
             incomingPower = incomingPower * 0.8f;
-            action = name + " defended and reduced damage taken to " + incomingPower;
+            setAction(getName() + " defended and reduced damage taken to " + incomingPower);
         }
         else
         {
-            action = name + " did not defend.";
+            setAction(getName() + " did not defend.");
         }
 
-        health -= incomingPower;
+        setHealth(getHealth() - incomingPower);
     }
 }

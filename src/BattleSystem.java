@@ -1,6 +1,6 @@
 public class BattleSystem {
     public void battle(Creature a, Creature b) {
-        while (a.health > 0 && b.health > 0) {
+        while (a.getHealth() > 0 && b.getHealth() > 0) {
             float attackPower = a.attack();
             b.defend(attackPower);
             System.out.println(a.readAction());
@@ -16,11 +16,11 @@ public class BattleSystem {
             b = temp;
         }
 
-        if (a.health > 0) {
-            System.out.println("Congratulations " + a.name + ", You Won!!!");
+        if (a.getHealth() > 0) {
+            System.out.println("Congratulations " + a.getName() + ", You Won!!!");
         }
         else {
-            System.out.println("Congratulations " + b.name + ", You Won!!!");
+            System.out.println("Congratulations " + b.getName() + ", You Won!!!");
         }
     }
 }
