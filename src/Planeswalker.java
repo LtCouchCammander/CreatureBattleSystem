@@ -19,8 +19,7 @@ public class Planeswalker extends Creature {
         }
         else {
             setAction( getName() + " did not defend.");
+            setHealth(getHealth() - incomingPower);
         }
-
-        setHealth(getHealth() - incomingPower);
     }
 }
